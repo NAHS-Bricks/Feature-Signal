@@ -45,7 +45,7 @@ void NahsBricksFeatureSignal::deliver(JsonDocument* out_json) {
     // check if signal count is requested
     if (RTCdata->signalCountRequested) {
         RTCdata->signalCountRequested = false;
-        out_json->getOrAddMember("s").set(_expandersPinsCount);
+        out_json->operator[]("s").set(_expandersPinsCount);
     }
 }
 
@@ -55,7 +55,7 @@ Processes feedback coming from BrickServer
 void NahsBricksFeatureSignal::feedback(JsonDocument* in_json) {
     // evaluate requests
     if (in_json->containsKey("r")) {
-        for (JsonVariant value : in_json->getMember("r").as<JsonArray>()) {
+        for (JsonVariant value : in_json->operator[]("r").as<JsonArray>()) {
             switch(value.as<uint8_t>()) {
                 case 7:
                     RTCdata->signalCountRequested = true;
@@ -67,7 +67,7 @@ void NahsBricksFeatureSignal::feedback(JsonDocument* in_json) {
     //set new signal states if delivered
     if (in_json->containsKey("o")) {
         uint8_t i = 0;
-        for (JsonVariant state : in_json->getMember("o").as<JsonArray>()) {
+        for (JsonVariant state : in_json->operator[]("o").as<JsonArray>()) {
             if (i < _expandersPinsCount) {
                 _writeCacheAdd(_expanders[i], _expandersPins[i], state.as<uint8_t>());
             } else break;
