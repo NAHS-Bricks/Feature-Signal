@@ -1,6 +1,6 @@
 {
   "name": "nahs-Bricks-Feature-Signal",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Implements the feature Signal for NAHS-Bricks which is able to switch IO-Expander pins on and off.",
   "keywords": "NAHS-Bricks, feature",
   "repository":
@@ -26,7 +26,7 @@
       "bblanchon/ArduinoJson": ">=6.17.3",
       "nils-ost/nahs-Bricks-Lib-FSmem": ">=1.1.1",
       "nils-ost/nahs-Bricks-Lib-RTCmem": ">=1.1.1",
-      "nils-ost/nahs-Bricks-Lib-CoIC": ">=1.0.1",
+      "nils-ost/nahs-Bricks-Lib-CoIC": ">=1.1.0",
       "nils-ost/nahs-Bricks-Feature-All": ">=1.3.0"
   },
   "frameworks": "*",
