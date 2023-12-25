@@ -175,9 +175,8 @@ void NahsBricksFeatureSignal::_writeCacheAdd(NahsBricksLibCoIC_Expander *expande
         _writeCache[cacheIndex] = expander->getOutputs();
         ++_writeCacheCount;
     }
-    if (state > 0) {
-        _writeCache[cacheIndex] |= (1<<pinIndex);
-    }
+    if (state > 0) _writeCache[cacheIndex] |= (1<<pinIndex);
+    else _writeCache[cacheIndex] &= ~(1<<pinIndex);
 }
 
 /*

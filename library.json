@@ -1,6 +1,6 @@
 {
   "name": "nahs-Bricks-Feature-Signal",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Implements the feature Signal for NAHS-Bricks which is able to switch IO-Expander pins on and off.",
   "keywords": "NAHS-Bricks, feature",
   "repository":
